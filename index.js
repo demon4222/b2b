@@ -14,9 +14,9 @@ const consultScene = require('./controllers/consult/index')
 const stage = new Stage([
     startScene,
     aboutScene,
-    // calculatorScene,
-    // bonusScene,
-    // consultScene
+    calculatorScene,
+    bonusScene,
+    consultScene
 ])
 
 const i18n = new TelegrafI18n({
@@ -36,20 +36,20 @@ bot.use(stage.middleware())
 
 bot.start(async (ctx) => await ctx.scene.enter('start'))
 
-// bot.hears(match('start.keyboard.calculator'), async (ctx) => {
-//     await ctx.scene.enter('calculator')
-// })
+bot.hears(match('start.keyboard.calculator'), async (ctx) => {
+    await ctx.scene.enter('calculator')
+})
 
 bot.hears(match('start.keyboard.about'), async (ctx) => {
     await ctx.scene.enter('about')
 })
 
-// bot.hears('start.keyboard.consult', async (ctx) => {
-//     await ctx.scene.enter('consult')
-// })
-//
-// bot.hears('start.keyboard.bonus', async (ctx) => {
-//     await ctx.scene.enter('bonus')
-// })
+bot.hears(match('start.keyboard.consult'), async (ctx) => {
+    await ctx.scene.enter('consult')
+})
+
+bot.hears(match('start.keyboard.bonus'), async (ctx) => {
+    await ctx.scene.enter('bonus')
+})
 
 bot.startPolling();
