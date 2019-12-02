@@ -6,6 +6,7 @@ module.exports.getStartKeyboard = getStartKeyboard = (ctx) => {
     const about = ctx.i18n.t('start.keyboard.about')
     const consult = ctx.i18n.t('start.keyboard.consult')
     const bonus = ctx.i18n.t('start.keyboard.bonus')
+    const register = ctx.i18n.t('start.keyboard.register')
 
     const startKeyboard = Markup.keyboard([
         [
@@ -15,6 +16,9 @@ module.exports.getStartKeyboard = getStartKeyboard = (ctx) => {
         [
             Markup.callbackButton(consult, consult),
             Markup.callbackButton(bonus, bonus),
+        ],
+        [
+            Markup.callbackButton(register, register)
         ]
     ]).resize().extra({parse_mode:'HTML'})
 

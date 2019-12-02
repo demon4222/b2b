@@ -5,7 +5,7 @@ const Stage = require('telegraf/stage')
 
 const keyboard = Markup.inlineKeyboard([
     [
-        Markup.urlButton("Зв'язатися", 'https://t.me/burlak_j')
+        Markup.urlButton("Зв'язатися", process.env.CONTACT)
     ]
 ]).resize().extra({parse_mode:'HTML'})
 

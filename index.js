@@ -10,13 +10,15 @@ const startScene = require('./controllers/start/index')
 const calculatorScene = require('./controllers/calculator/index')
 const bonusScene = require('./controllers/bonus/index')
 const consultScene = require('./controllers/consult/index')
+const registerScene = require('./controllers/register/index')
 
 const stage = new Stage([
     startScene,
     aboutScene,
     calculatorScene,
     bonusScene,
-    consultScene
+    consultScene,
+    registerScene,
 ])
 
 const i18n = new TelegrafI18n({
@@ -38,6 +40,10 @@ bot.start(async (ctx) => await ctx.scene.enter('start'))
 
 bot.hears(match('start.keyboard.calculator'), async (ctx) => {
     await ctx.scene.enter('calculator')
+})
+
+bot.hears(match('start.keyboard.register'), async (ctx) => {
+    await ctx.scene.enter('register')
 })
 
 bot.hears(match('start.keyboard.about'), async (ctx) => {
