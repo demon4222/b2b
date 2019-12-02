@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "path": "^0.12.7",
+    "pm2": "^4.2.0",
+    "telegraf": "^3.34.1",
+    "telegraf-i18n": "^6.6.0"
+  }
+}
