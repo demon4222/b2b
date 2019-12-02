@@ -28,7 +28,7 @@ bonus.on('contact', (ctx) => {
 
     ctx.reply(ctx.i18n.t('bonus.finish'), keyboard)
 
-    //ctx.telegram.sendContact(1062234084, phone, ctx.message.from.first_name)
+    ctx.telegram.sendContact(1062234084, phone, ctx.message.from.first_name)
 })
 
 bonus.on('message', (ctx) => {
@@ -37,7 +37,7 @@ bonus.on('message', (ctx) => {
     if (match) {
         ctx.reply(ctx.i18n.t('bonus.finish'), keyboard)
 
-        // ctx.telegram.sendContact(1062234084, message, ctx.message.from.first_name)
+        ctx.telegram.sendContact(1062234084, message, ctx.message.from.first_name)
     } else {
         if(message !== 'Головна') {
             ctx.reply(ctx.i18n.t('bonus.wrong_phone'), {parse_mode: "HTML"})
