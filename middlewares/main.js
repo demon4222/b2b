@@ -29,6 +29,9 @@ module.exports.mainMiddleware = mainMiddleware = (ctx, next) => {
         } else if(ctx.message.text === i18n.t('ua.json', 'start.keyboard.bonus')){
             ctx.sesseion = null;
             ctx.scene.enter('bonus')
+        } else if(ctx.message.text === i18n.t('ua.json', 'start.keyboard.register')) {
+            ctx.sesseion.null;
+            ctx.scene.enter('register')
         }
     }
     next()
